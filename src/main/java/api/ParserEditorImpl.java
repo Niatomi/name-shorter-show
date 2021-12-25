@@ -1,11 +1,15 @@
 package api;
 
+import jdk.nashorn.internal.objects.annotations.Constructor;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import lombok.*;
 
-public class ParserEditorImp implements ParserEditor{
+@RequiredArgsConstructor
+public class ParserEditorImpl implements ParserEditor{
 
     private List<String> parser(String stringOfNames) {
         List<String> listOfNames = new ArrayList<>();
