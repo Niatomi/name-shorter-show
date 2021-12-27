@@ -1,4 +1,4 @@
-package generator;
+package ru.niatomi.generator;
 
 import java.util.List;
 

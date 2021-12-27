@@ -1,7 +1,4 @@
-package api;
-
-import java.util.List;
-import java.util.Optional;
+package ru.niatomi.api;
 
 public interface ParserEditor {
 
