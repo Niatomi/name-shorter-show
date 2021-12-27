@@ -1,6 +1,4 @@
-package api;
-
-import jdk.nashorn.internal.objects.annotations.Constructor;
+package ru.niatomi.api;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -39,7 +37,7 @@ public class ParserEditorImpl implements ParserEditor{
                                             listString.get(1) +
                                             " and " +
                                             listString.get(2) +
-                                            "liked this post";
+                                            " liked this post";
 
         if (listString.size() >= 4) return listString.get(0) +
                                             ", " +
