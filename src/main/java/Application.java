@@ -1,5 +1,7 @@
 import api.ParserEditor;
 import api.ParserEditorImpl;
+import generator.NameListGenerator;
+import generator.NameListGeneratorImpl;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -9,6 +11,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 public class Application {
@@ -17,7 +20,7 @@ public class Application {
 
         //init
         ParserEditor parserEditor = new ParserEditorImpl();
-        List<String> listOfNames = new ArrayList<>();
+        NameListGenerator nameListGenerator = new NameListGeneratorImpl();
 
         Path path = Paths.get("")
                 .toAbsolutePath()
@@ -32,24 +35,9 @@ public class Application {
                     .collect(Collectors.toList());
         bag.remove(0);
 
-        StringBuilder stringBuilder = new StringBuilder("");
+        List<String> stringListNames = nameListGenerator.generateNames(bag);
 
-        for (int i = 0; i < bag.size(); i++) {
-            if ((int)(Math.random()*2) == 1) {
-                if (stringBuilder.toString() == "") {
-                    stringBuilder.append(bag.get(i));
-                } else {
-                    stringBuilder.append(", " + bag.get(i));
-                }
-            } else if (stringBuilder.toString() != ""){
-                listOfNames.add(stringBuilder.toString());
-                stringBuilder.setLength(0);
-            }
-        }
-
-        for (String s : listOfNames) {
-            System.out.println(parserEditor.showLiked(s));
-        }
+        for (String s : stringListNames) System.out.println(parserEditor.showLiked(s));
 
     }
 }
