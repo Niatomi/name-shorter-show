@@ -1,17 +1,15 @@
-import api.ParserEditor;
-import api.ParserEditorImpl;
-import generator.NameListGenerator;
-import generator.NameListGeneratorImpl;
+import ru.niatomi.api.ParserEditor;
+import ru.niatomi.api.ParserEditorImpl;
+import ru.niatomi.generator.NameListGenerator;
+import ru.niatomi.generator.NameListGeneratorImpl;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
 import java.util.stream.Collectors;
 
 public class Application {
